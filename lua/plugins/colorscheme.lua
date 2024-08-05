@@ -1,0 +1,83 @@
+-- if true then
+-- 	return {}
+-- end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+return {
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha", -- or your preferred flavor
+				background = {
+					light = "latte",
+					dark = "mocha",
+				},
+				transparent_background = true,
+				show_end_of_buffer = false,
+				term_colors = false,
+				dim_inactive = {
+					enabled = false,
+					shade = "dark",
+					percentage = 0.15,
+				},
+				no_italic = false,
+				no_bold = false,
+				no_underline = false,
+				styles = {
+					comments = { "italic" },
+					conditionals = { "italic" },
+					loops = { "italic" },
+					functions = {},
+					keywords = {},
+					strings = {},
+					variables = {},
+					numbers = {},
+					booleans = {},
+					properties = {},
+					types = {},
+					operators = {},
+				},
+				color_overrides = {
+					mocha = {
+						-- base = "#1e1e2e",
+						-- mantle = "#1e1e2e",
+						-- crust = "#1e1e2e",
+					},
+				},
+				custom_highlights = function(colors)
+					return {
+						TabLine = { bg = colors.base },
+						TabLineFill = { bg = colors.base },
+						TabLineSel = { bg = colors.base },
+						StatusLine = { bg = colors.base },
+						StatusLineNC = { bg = colors.base },
+						-- WinBar = { bg = colors.base },
+						-- WinBarNC = { bg = colors.base },
+						-- WinSeparator = { fg = colors.base, bg = colors.base },
+						-- NormalFloat = { bg = colors.base },
+						-- FloatBorder = { fg = colors.base, bg = colors.base },
+					}
+				end,
+				integrations = {
+					cmp = true,
+					gitsigns = true,
+					nvimtree = true,
+					treesitter = true,
+					notify = false,
+					mini = {
+						enabled = true,
+						indentscope_color = "",
+					},
+				},
+			})
+			vim.cmd.colorscheme("catppuccin")
+			vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
+			-- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC", bold = true })
+			-- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F", bold = true })
+			-- Set the background to be transparent
+			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+		end,
+	},
+}
