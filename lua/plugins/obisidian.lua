@@ -28,19 +28,19 @@ local opts = {
 }
 
 local concept_note_name = "Concept-Notes"
-
 return {
 	{
 		"epwalsh/obsidian.nvim",
 		version = "*",
 		keys = {
-			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]bsidian [O]pen" },
-			{ "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "[O]bsidian [B]acklinks" },
-			{ "<leader>otd", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [T]o[d]ay" },
-			{ "<leader>otm", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [T]o[m]orrow" },
+			{ "<leader>oo",  "<cmd>ObsidianOpen<cr>",      desc = "[O]bsidian [O]pen" },
+			{ "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", desc = "[O]bsidian [B]acklinks" },
+			{ "<leader>otd", "<cmd>ObsidianToday<cr>",     desc = "[O]bsidian [T]o[d]ay" },
+			{ "<leader>otm", "<cmd>ObsidianTomorrow<cr>",  desc = "[O]bsidian [T]o[m]orrow" },
 			{ "<leader>oyd", "<cmd>ObsidianYesterday<cr>", desc = "[O]bsidian [Y]ester[d]ay" },
-			{ "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "[O]bsidian [S]earch" },
+			{ "<leader>os",  "<cmd>ObsidianSearch<cr>",    desc = "[O]bsidian [S]earch" },
 		},
+		ui = { enable = false },
 		lazy = true,
 		ft = "markdown",
 		dependencies = {
@@ -52,6 +52,7 @@ return {
 		config = function()
 			local obsidian = require("obsidian")
 			obsidian.setup(opts)
+			-- ui = { enable = false }
 		end,
 	},
 	-- {
