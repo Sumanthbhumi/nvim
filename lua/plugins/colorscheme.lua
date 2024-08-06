@@ -26,17 +26,17 @@ return {
 				no_underline = false,
 				styles = {
 					comments = { "italic" },
-					conditionals = { "italic" },
-					loops = { "italic" },
-					functions = {},
-					keywords = {},
+					functions = { "bold" },
+					keywords = { "italic" },
+					operators = { "bold" },
+					conditionals = { "bold" },
+					loops = { "bold" },
+					booleans = { "bold", "italic" },
+					numbers = {},
+					types = {},
 					strings = {},
 					variables = {},
-					numbers = {},
-					booleans = {},
 					properties = {},
-					types = {},
-					operators = {},
 				},
 				color_overrides = {
 					mocha = {
@@ -57,6 +57,19 @@ return {
 						-- WinSeparator = { fg = colors.base, bg = colors.base },
 						-- NormalFloat = { bg = colors.base },
 						-- FloatBorder = { fg = colors.base, bg = colors.base },
+						-- ["@variable"] = { fg = "#589ED7" }, -- Variables
+						["@type.builtin"] = { fg = "#5497CE" },
+						["@function"] = { fg = "#F6A3E5" }, -- Functions
+						["@keyword"] = { fg = "#F6A3E5" }, -- Keywords
+						["@type"] = { fg = "#65BCFF" }, -- Types
+						["@string"] = { fg = "#C3E88D" }, -- Strings
+						["@number"] = { fg = "#FF966C" }, -- Numbers
+						["@boolean"] = { fg = "#FF966C" }, -- Booleans
+						["@operator"] = { fg = "#89DDFF" }, -- Operators
+						["@property"] = { fg = "#4FD6BE" }, -- Properties
+						["@condition"] = { fg = "#4FD6BE" },
+						["@keyword.return"] = { fg = "#F6A3E5" },
+						["@keyword.main"] = { fg = "#F6A3E5" },
 					}
 				end,
 				integrations = {

@@ -11,7 +11,6 @@ return {
 	-- import/override with your plugins folder
 	{ import = "astrocommunity.game.leetcode-nvim" },
 	{ import = "astrocommunity.motion.marks-nvim" },
-	-- { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+	{ import = "astrocommunity.colorscheme.tokyonight-nvim" },
 	-- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-	{ import = "astrocommunity.diagnostics.trouble-nvim" },
 }

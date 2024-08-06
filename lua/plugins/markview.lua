@@ -15,7 +15,7 @@ if true then
 				hybrid_modes = { "i" },
 				options = {
 					on_enable = {
-						conceallevel = 2,
+						conceallevel = 0,
 						concealcursor = "",
 					},
 					on_disable = {

@@ -79,13 +79,10 @@ local all_modes = { "n", "v", "x", "s", "o", "i", "c" }
 set_keymap_for_modes(all_modes, "Z", "%")
 vim.api.nvim_set_keymap("i", "<C-J>", "<Esc>", { noremap = true })
 
--- vim.api.nvim_set_keymap("i", "Q", "&", { noremap = true })
--- vim.api.nvim_set_keymap("i", "&", "Q", { noremap = true })
-
 vim.keymap.set("n", "H", "^", { noremap = true })
 vim.keymap.set("v", "H", "^l", { noremap = true })
 vim.keymap.set("n", "L", "$", { noremap = true })
-vim.keymap.set("v", "L", "$h", { noremap = true })
+vim.keymap.set("v", "L", "$", { noremap = true })
 
 vim.keymap.set("n", "yy", "mj0y$'j", { noremap = true, silent = true })
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
