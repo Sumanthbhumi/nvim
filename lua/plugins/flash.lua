@@ -32,11 +32,38 @@ return {
 	config = function(_, opts)
 		require("flash").setup(opts)
 
-		-- Define custom highlight groups
-		vim.api.nvim_set_hl(0, "CustomFlashMatch", { fg = "#AEB8F7" })
-		vim.api.nvim_set_hl(0, "CustomFlashCurrent", { fg = "#FAB388" })
-		vim.api.nvim_set_hl(0, "CustomFlashBackdrop", { fg = "#636DA6" })
-		vim.api.nvim_set_hl(0, "CustomFlashLabel", { fg = "#A6E3A2", bold = true })
+		-- Define Catppuccin colors explicitly
+		local catppuccin_colors = {
+			blue = "#89B4FA",
+			peach = "#FAB387",
+			overlay0 = "#6C7086",
+			green = "#A6E3A1",
+		}
+
+		-- Function to set custom highlights
+		local function set_custom_highlights()
+			vim.api.nvim_set_hl(0, "CustomFlashMatch", { fg = catppuccin_colors.blue })
+			vim.api.nvim_set_hl(0, "CustomFlashCurrent", { fg = catppuccin_colors.peach })
+			vim.api.nvim_set_hl(0, "CustomFlashBackdrop", { fg = catppuccin_colors.overlay0 })
+			vim.api.nvim_set_hl(0, "CustomFlashLabel", { fg = catppuccin_colors.green, bold = true })
+		end
+
+		-- Set custom highlights immediately
+		set_custom_highlights()
+
+		-- Set up autocmd to reapply highlights after colorscheme changes
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			pattern = "*",
+			callback = set_custom_highlights,
+		})
+
+		-- Set up autocmd to reapply highlights after a short delay
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			pattern = "*",
+			callback = function()
+				vim.defer_fn(set_custom_highlights, 100)
+			end,
+		})
 
 		-- Custom function to wrap flash.jump() with marking behavior
 		local function flash_jump_with_marks()
@@ -46,7 +73,6 @@ return {
 				vim.cmd("normal! mg")
 			end, 10)
 		end
-
 		vim.keymap.set({ "n", "x", "o" }, "s", flash_jump_with_marks, { desc = "Flash with marks" })
 	end,
 	keys = {

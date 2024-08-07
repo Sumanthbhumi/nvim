@@ -40,7 +40,6 @@ return {
 			{ "<leader>oyd", "<cmd>ObsidianYesterday<cr>", desc = "[O]bsidian [Y]ester[d]ay" },
 			{ "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "[O]bsidian [S]earch" },
 		},
-		-- ui = { enable = false },
 		lazy = true,
 		ft = "markdown",
 		dependencies = {
@@ -53,7 +52,7 @@ return {
 			local obsidian = require("obsidian")
 			obsidian.setup(opts)
 			ui = {
-				enable = false, -- set to false to disable all additional syntax features
+				enable = true, -- set to false to disable all additional syntax features
 				update_debounce = 200, -- update delay after a text change (in milliseconds)
 				max_file_length = 5000, -- disable UI features for files with more than this many lines
 				-- Define how various check-boxes are displayed

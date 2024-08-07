@@ -70,6 +70,14 @@ return {
 						["@condition"] = { fg = "#4FD6BE" },
 						["@keyword.return"] = { fg = "#F6A3E5" },
 						["@keyword.main"] = { fg = "#F6A3E5" },
+						["@keyword.class"] = { fg = "#F6A3E5" },
+						-- ["@storageclass"] = { fg = "#9D7CD8", italic = true },
+						--
+						-- Change punctuation color (semicolons and colons)
+						["@punctuation.delimiter"] = { fg = "#89DDFF" },
+						--
+						-- -- Change indent guide color
+						-- IndentBlanklineChar = { fg = "#3B4261" },
 					}
 				end,
 				integrations = {
@@ -84,7 +92,7 @@ return {
 					},
 				},
 			})
-			vim.cmd.colorscheme("catppuccin")
+			-- vim.cmd.colorscheme("catppuccin")
 			vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
 			-- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC", bold = true })
 			-- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F", bold = true })
@@ -92,5 +100,34 @@ return {
 			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 		end,
+	},
+	{
+		{
+			"folke/tokyonight.nvim",
+			lazy = false,
+			priority = 1000,
+			opts = {
+				style = "moon", -- This will use the default night style
+				transparent = false, -- If you want transparency
+				styles = {
+					comments = { italic = true },
+					keywords = { italic = true },
+					functions = { bold = true },
+					variables = {},
+				},
+				on_highlights = function(hl, c)
+					hl.CursorLineNr = { fg = "#959DD4", bg = "NONE", bold = true }
+					-- Add any other custom highlights here
+				end,
+			},
+			config = function()
+				-- Load the colorscheme
+				vim.cmd([[colorscheme tokyonight]])
+
+				-- Set the background to be transparent
+				vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+				vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+			end,
+		},
 	},
 }
