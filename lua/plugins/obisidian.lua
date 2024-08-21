@@ -1,9 +1,9 @@
 local opts = {
 	workspaces = {
-		{ name = "personal", path = "/home/bobby/Notes/" },
+		{ name = "personal", path = "/home/bobby/Sync/Notes/" },
 		{
 			name = "work",
-			path = "~/projects/todo/",
+			-- path = "~/projects/todo/",
 		},
 	},
 
