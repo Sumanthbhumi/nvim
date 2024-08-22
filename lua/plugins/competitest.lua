@@ -1,32 +1,3 @@
--- Function to get and increment the problem counter
-local function get_problem_counter()
-	local counter_file = ".problem_counter"
-	local counter = 0
-
-	-- Try to read the existing counter from the file
-	local file = io.open(counter_file, "r")
-	if file then
-		counter = tonumber(file:read("*all")) or 0
-		file:close()
-	end
-
-	-- Increment the counter
-	counter = counter + 1
-
-	-- Write the new counter back to the file
-	file = io.open(counter_file, "w")
-	if file then
-		file:write(tostring(counter))
-		file:close()
-	end
-
-	return counter
-end
-
--- Integrate the counter into the directory path
-local problem_counter = get_problem_counter()
-local problem_dir_format = string.format("%03d_$(PROBLEM)/$(PROBLEM).$(FEXT)", problem_counter)
-
 return {
 	"xeluxee/competitest.nvim",
 	dependencies = "MunifTanjim/nui.nvim",
@@ -136,7 +107,7 @@ return {
 			output_compare_method = "squish",
 			view_output_diff = false,
 
-			testcases_directory = ".", -- Place test cases in the current directory
+			testcases_directory = ".",
 			testcases_use_single_file = false,
 			testcases_auto_detect_storage = true,
 			testcases_single_file_format = "$(FNOEXT).testcases",
@@ -149,10 +120,10 @@ return {
 			evaluate_template_modifiers = false,
 			date_format = "%c",
 			received_files_extension = "cpp",
-			received_problems_path = "$(CWD)/" .. problem_dir_format,
+			received_problems_path = "$(CWD)/$(PROBLEM)",
 			received_problems_prompt_path = true,
-			received_contests_directory = "$(CWD)", -- Place contests in the current directory
-			received_contests_problems_path = "$(CWD)/" .. problem_dir_format,
+			received_contests_directory = "$(CWD)",
+			received_contests_problems_path = "$(CWD)/$(PROBLEM)",
 			received_contests_prompt_directory = true,
 			received_contests_prompt_extension = true,
 			open_received_problems = true,
