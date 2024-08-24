@@ -80,10 +80,14 @@ set_keymap_for_modes(all_modes, "Z", "%")
 vim.api.nvim_set_keymap("i", "<C-J>", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "H", "^", { noremap = true })
-vim.keymap.set("v", "H", "^l", { noremap = true })
+vim.keymap.set("v", "H", "^", { noremap = true })
 vim.keymap.set("n", "L", "$", { noremap = true })
 vim.keymap.set("v", "L", "$h", { noremap = true })
 
-vim.keymap.set("n", "yy", "mj0y$'j", { noremap = true, silent = true })
+-- vim.keymap.set("n", "yy", "mj0y$'j", { noremap = true, silent = true })
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "G", "Gzz", { noremap = true })
+
+vim.keymap.set("n", "aa", ":CompetiTest receive problem<CR>", { desc = "add problem" })
+vim.keymap.set("n", "ac", ":CompetiTest receive contest<CR>", { desc = "add contest" })
+vim.keymap.set("n", "ar", ":CompetiTest run<CR>", { desc = "run program" })

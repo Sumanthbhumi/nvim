@@ -7,7 +7,7 @@ local opts = {
 		},
 	},
 
-	new_notes_location = "/home/bobby/Notes/",
+	new_notes_location = "/home/bobby/Sync/Notes/",
 
 	note_id_func = function(title)
 		return title
@@ -33,12 +33,12 @@ return {
 		"epwalsh/obsidian.nvim",
 		version = "*",
 		keys = {
-			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]bsidian [O]pen" },
-			{ "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "[O]bsidian [B]acklinks" },
-			{ "<leader>otd", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [T]o[d]ay" },
-			{ "<leader>otm", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [T]o[m]orrow" },
+			{ "<leader>oo",  "<cmd>ObsidianOpen<cr>",      desc = "[O]bsidian [O]pen" },
+			{ "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", desc = "[O]bsidian [B]acklinks" },
+			{ "<leader>otd", "<cmd>ObsidianToday<cr>",     desc = "[O]bsidian [T]o[d]ay" },
+			{ "<leader>otm", "<cmd>ObsidianTomorrow<cr>",  desc = "[O]bsidian [T]o[m]orrow" },
 			{ "<leader>oyd", "<cmd>ObsidianYesterday<cr>", desc = "[O]bsidian [Y]ester[d]ay" },
-			{ "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "[O]bsidian [S]earch" },
+			{ "<leader>os",  "<cmd>ObsidianSearch<cr>",    desc = "[O]bsidian [S]earch" },
 		},
 		lazy = true,
 		ft = "markdown",
@@ -48,11 +48,19 @@ return {
 			"hrsh7th/nvim-cmp",
 			"nvim-telescope/telescope.nvim",
 		},
+		---@param url string
+		follow_url_func = function(url)
+			-- Open the URL in the default web browser.
+			-- vim.fn.jobstart({ "open", url }) -- Mac OS
+			-- vim.fn.jobstart({"xdg-open", url})  -- linux
+			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+			-- vim.ui.open(url) -- need Neovim 0.10.0+
+		end,
 		config = function()
 			local obsidian = require("obsidian")
 			obsidian.setup(opts)
 			ui = {
-				enable = true, -- set to false to disable all additional syntax features
+				enable = true,      -- set to false to disable all additional syntax features
 				update_debounce = 200, -- update delay after a text change (in milliseconds)
 				max_file_length = 5000, -- disable UI features for files with more than this many lines
 				-- Define how various check-boxes are displayed
