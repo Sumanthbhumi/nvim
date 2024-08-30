@@ -8,6 +8,7 @@ return { -- override nvim-cmp plugin
 		-- modify the mapping part of the table
 		-- opts.mapping["<C-x>"] = cmp.mapping.select_next_item()
 		opts.mapping["<C-J>"] = cmp.config.disable
+		opts.mapping["<C-P>"] = cmp.config.disable
 		-- cpm.util.keymap.del_map("<C-J>")
 	end,
 }

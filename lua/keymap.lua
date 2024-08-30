@@ -91,3 +91,14 @@ vim.keymap.set({ "n", "v" }, "G", "Gzz", { noremap = true })
 vim.keymap.set("n", "<leader>aa", ":CompetiTest receive problem<CR>", { desc = "add problem" })
 vim.keymap.set("n", "<leader>ac", ":CompetiTest receive contest<CR>", { desc = "add contest" })
 vim.keymap.set("n", "<leader>ar", ":CompetiTest run<CR>", { desc = "run program" })
+
+vim.keymap.set("i", "<c-p>", function()
+	require("telescope.builtin").registers()
+end, { noremap = true, silent = false, desc = "search registers" })
+
+vim.keymap.set(
+	"n",
+	"<leader>up",
+	':let @+ = expand("%:p")<CR>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<CR>',
+	{ desc = "copy path and file name to clipboard", silent = false }
+)
