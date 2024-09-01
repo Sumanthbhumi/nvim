@@ -1,4 +1,4 @@
-vim.opt.scrolloff = 5 -- Set scrolloff option
+vim.opt.scrolloff = 5    -- Set scrolloff option
 vim.opt.swapfile = false --Swapfile
 -- set keyboard to unnamedplus
 vim.opt.clipboard = "unnamedplus"
@@ -21,8 +21,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.number = true
 	end,
 })
-vim.cmd([[colorscheme tokyonight]])
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
+-- vim.cmd([[colorscheme tokyonight]])
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 require("lspconfig").clangd.setup({
@@ -32,4 +32,18 @@ require("lspconfig").clangd.setup({
 		"clangd",
 		"--offset-encoding=utf-16",
 	},
+})
+
+-- Disable mouse in insert mode
+vim.api.nvim_create_autocmd("InsertEnter", {
+	callback = function()
+		vim.opt.mouse = ""
+	end,
+})
+
+-- Re-enable mouse when leaving insert mode
+vim.api.nvim_create_autocmd("InsertLeave", {
+	callback = function()
+		vim.opt.mouse = "a"
+	end,
 })

@@ -12,5 +12,6 @@ return {
 	{ import = "astrocommunity.game.leetcode-nvim" },
 	{ import = "astrocommunity.motion.marks-nvim" },
 	{ import = "astrocommunity.colorscheme.tokyonight-nvim" },
+	{ import = "astrocommunity.indent.mini-indentscope" },
 	-- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
 }
