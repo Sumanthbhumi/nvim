@@ -54,7 +54,7 @@ return {
 					-- Make sure you have a css treesitter parser installed
 					-- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/treesitter.lua
 					css = {
-						enabled = true,
+						enabled = false,
 					},
 				},
 				max_width = nil,

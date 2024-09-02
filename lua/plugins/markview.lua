@@ -50,7 +50,7 @@ return {
 			})
 
 			-- Automatically enable Markview for all buffers
-			vim.cmd("Markview enableAll")
+			-- vim.cmd("Markview enableAll")
 
 			-- Function to update concealment for the current line
 			local function update_concealment()
