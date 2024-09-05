@@ -78,6 +78,8 @@ local all_modes = { "n", "v", "x", "s", "o", "i", "c" }
 -- Set Z and % mappings
 set_keymap_for_modes(all_modes, "Z", "%")
 vim.api.nvim_set_keymap("i", "<C-J>", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("v", "<C-J>", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-J>", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "H", "^", { noremap = true })
 vim.keymap.set("v", "H", "^", { noremap = true })
@@ -102,3 +104,6 @@ vim.keymap.set(
 	':let @+ = expand("%:p")<CR>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<CR>',
 	{ desc = "copy path and file name to clipboard", silent = false }
 )
+vim.keymap.set("n", "<leader>vca", function()
+	vim.lsp.buf.code_action()
+end, opts)
