@@ -78,6 +78,7 @@ local all_modes = { "n", "v", "x", "s", "o", "i", "c" }
 -- Set Z and % mappings
 set_keymap_for_modes(all_modes, "Z", "%")
 vim.api.nvim_set_keymap("i", "<C-J>", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("v", "<C-J>", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "H", "^", { noremap = true })
 vim.keymap.set("v", "H", "^", { noremap = true })

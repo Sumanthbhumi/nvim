@@ -156,23 +156,23 @@ return {
 	},
 
 	-- {
-	--   "mvllow/modes.nvim",
-	--   config = function()
-	--     require("modes").setup {
-	--       colors = {
-	--         bg = "", -- Optional bg param, defaults to Normal hl group
-	--         copy = "#f5c359",
-	--         delete = "#c75c6a",
-	--         insert = "#78ccc5",
-	--         visual = "#9745be",
-	--       },
-	--       line_opacity = 0.5,
-	--       set_cursor = true,
-	--       set_cursorline = true,
-	--       set_number = true,
-	--       ignore_filetypes = { "NvimTree", "TelescopePrompt" },
-	--     }
-	--   end,
+	-- 	"mvllow/modes.nvim",
+	-- 	config = function()
+	-- 		require("modes").setup({
+	-- 			colors = {
+	-- 				bg = "", -- Optional bg param, defaults to Normal hl group
+	-- 				copy = "#f5c359",
+	-- 				delete = "#c75c6a",
+	-- 				insert = "#78ccc5",
+	-- 				visual = "#9745be",
+	-- 			},
+	-- 			line_opacity = 0.5,
+	-- 			set_cursor = true,
+	-- 			set_cursorline = true,
+	-- 			set_number = true,
+	-- 			ignore_filetypes = { "NvimTree", "TelescopePrompt" },
+	-- 		})
+	-- 	end,
 	-- },
 
 	{
@@ -195,7 +195,7 @@ return {
 					},
 				},
 				suggestion = {
-					enabled = true,
+					enabled = false,
 					auto_trigger = true,
 					debounce = 75,
 					keymap = {
@@ -209,7 +209,7 @@ return {
 				},
 				filetypes = {
 					yaml = false,
-					markdown = false,
+					markdown = true,
 					help = false,
 					-- gitcommit = false,
 					-- gitrebase = false,
@@ -256,38 +256,38 @@ return {
 		"christoomey/vim-tmux-navigator",
 	},
 
-	{
-		"nvim-neorg/neorg",
-		version = "^8",
-		dependencies = {
-			{
-				"vhyrro/luarocks.nvim",
-				priority = 1000, -- We'd like this plugin to load first out of the rest
-				config = true,
-			},
-		},
-		event = "VeryLazy",
-		opts = {
-			load = {
-				["core.defaults"] = {}, -- Loads default behaviour
-				["core.concealer"] = {}, -- Adds pretty icons to your documents
-				["core.keybinds"] = {}, -- Adds default keybindings
-				["core.completion"] = {
-					config = {
-						engine = "nvim-cmp",
-					},
-				}, -- Enables support for completion plugins
-				["core.journal"] = {}, -- Enables support for the journal module
-				["core.dirman"] = { -- Manages Neorg workspaces
-					config = {
-						workspaces = {
-							notes = "~/projects/notes",
-						},
-					},
-				},
-			},
-		},
-	},
+	-- {
+	-- 	"nvim-neorg/neorg",
+	-- 	version = "^8",
+	-- 	dependencies = {
+	-- 		{
+	-- 			"vhyrro/luarocks.nvim",
+	-- 			priority = 1000, -- We'd like this plugin to load first out of the rest
+	-- 			config = true,
+	-- 		},
+	-- 	},
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		load = {
+	-- 			["core.defaults"] = {}, -- Loads default behaviour
+	-- 			["core.concealer"] = {}, -- Adds pretty icons to your documents
+	-- 			["core.keybinds"] = {}, -- Adds default keybindings
+	-- 			["core.completion"] = {
+	-- 				config = {
+	-- 					engine = "nvim-cmp",
+	-- 				},
+	-- 			}, -- Enables support for completion plugins
+	-- 			["core.journal"] = {}, -- Enables support for the journal module
+	-- 			["core.dirman"] = { -- Manages Neorg workspaces
+	-- 				config = {
+	-- 					workspaces = {
+	-- 						notes = "~/projects/notes",
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"bullets-vim/bullets.vim",
 	},
@@ -312,6 +312,10 @@ return {
 				".log",
 				".cache",
 				".toml",
+				".png",
+				".jpeg",
+				".svg",
+				".ico",
 			},
 		},
 	}),

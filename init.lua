@@ -23,16 +23,3 @@ require("lazy_setup")
 require("polish")
 require("keymap")
 require("settings")
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = "markdown",
--- 	callback = function()
--- 		vim.cmd.colorscheme("catppuccin-mocha")
---
--- 		-- Additional Markdown-specific settings
--- 		vim.opt_local.conceallevel = 2
--- 		vim.opt_local.wrap = true
--- 		vim.opt_local.linebreak = true
---
--- 		-- You can add more Markdown-specific settings here
--- 	end,
--- })

@@ -1,4 +1,4 @@
-vim.opt.scrolloff = 5    -- Set scrolloff option
+vim.opt.scrolloff = 5 -- Set scrolloff option
 vim.opt.swapfile = false --Swapfile
 -- set keyboard to unnamedplus
 vim.opt.clipboard = "unnamedplus"
@@ -47,3 +47,15 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.mouse = "a"
 	end,
 })
+-- Set cursor to block in all modes
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+
+-- Define highlight groups
+vim.cmd([[
+  highlight Cursor guifg=white guibg=green
+  highlight iCursor guifg=yellow guibg=cyan
+  highlight vCursor guibg=#A6E3A2 guifg=black
+]])
+
+-- Apply iCursor highlight group to insert mode cursor
+vim.opt.guicursor:append("i-ci-ve:block-iCursor")
