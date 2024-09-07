@@ -4,17 +4,17 @@
 -- Link to github repo
 -- https://github.com/iamcco/markdown-preview.nvim
 
-return {
-	"iamcco/markdown-preview.nvim",
-	-- keys = {
-	-- 	{
-	-- 		"<leader>mp",
-	-- 		ft = "markdown",
-	-- 		"<cmd>MarkdownPreviewToggle<cr>",
-	-- 		desc = "Markdown Preview",
-	-- 	},
-	-- },
-}
+-- return {
+-- 	"iamcco/markdown-preview.nvim",
+-- 	-- keys = {
+-- 	-- 	{
+-- 	-- 		"<leader>mp",
+-- 	-- 		ft = "markdown",
+-- 	-- 		"<cmd>MarkdownPreviewToggle<cr>",
+-- 	-- 		desc = "Markdown Preview",
+-- 	-- 	},
+-- 	-- },
+-- }
 -- if true then
 -- 	return {
 -- 		-- {
@@ -47,12 +47,12 @@ return {
 -- 		},
 -- 	}
 -- end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
--- return {
--- 	{
--- 		"MeanderingProgrammer/render-markdown.nvim",
--- 		opts = {},
--- 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
--- 		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
--- 		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
--- 	},
--- }
+return {
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+	},
+}
