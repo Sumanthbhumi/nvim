@@ -7,8 +7,8 @@ vim.api.nvim_set_keymap("i", "<A-j>", "<Down>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
 -- vim.api.nvim_set_keymap("n", ":", ";", { noremap = true })
 
-vim.api.nvim_set_keymap("i", "<C-h>", "<C-w>", { noremap = true }) -- Delete the previous wordkey
-vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true }) -- Navigate to the next buffer
+vim.api.nvim_set_keymap("i", "<C-h>", "<C-w>", { noremap = true })            -- Delete the previous wordkey
+vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true })       -- Navigate to the next buffer
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true }) -- Navigate to the previous buffer
 
 -- Remap tmux-like navigation keys
@@ -51,7 +51,7 @@ vim.keymap.set("n", "<Leader>fE", function()
 
 		-- Construct and execute the feh command with zoom
 		local cmd =
-			string.format("feh -B White --geometry %dx%d --zoom 200 %s &", width, height, vim.fn.shellescape(file))
+				string.format("feh -B White --geometry %dx%d --zoom 200 %s &", width, height, vim.fn.shellescape(file))
 		vim.fn.system(cmd)
 	else
 		print("Failed to get image dimensions. Opening with default size.")
@@ -88,6 +88,8 @@ vim.keymap.set("v", "L", "$h", { noremap = true })
 -- vim.keymap.set("n", "yy", "mj0y$'j", { noremap = true, silent = true })
 vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "G", "Gzz", { noremap = true })
+vim.keymap.set("n", "<c-d>", "<c-d>zz", { noremap = true })
+vim.keymap.set("n", "<c-u>", "<c-u>zz", { noremap = true })
 
 vim.keymap.set("n", "<leader>aa", ":CompetiTest receive problem<CR>", { desc = "add problem" })
 vim.keymap.set("n", "<leader>ac", ":CompetiTest receive contest<CR>", { desc = "add contest" })
@@ -109,6 +111,6 @@ end, opts)
 
 vim.keymap.set("n", "<leader>ah", ":lua require('harpoon.mark').add_file()<cr>", { desc = "add to harpoon" })
 
-vim.keymap.set("n", "<leader>ai", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "add to harpoon" })
-vim.keymap.set("n", "<c-m>", ":lua require('harpoon.ui').nav_next()<cr>", { desc = "add to harpoon" })
-vim.keymap.set("n", "<c-,>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc = "add to harpoon" })
+vim.keymap.set("n", "<leader>ai", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "toggle harpoon" })
+vim.keymap.set("n", "<c-m>", ":lua require('harpoon.ui').nav_next()<cr>", { desc = "harpoon next" })
+vim.keymap.set("n", "<c-,>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc = "harpoon before" })

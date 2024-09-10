@@ -93,8 +93,8 @@ return {
 				-- 	},
 			})
 			vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
-			-- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC", bold = true })
-			-- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F", bold = true })
+			vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC" })
+			vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F" })
 			-- Set the background to be transparent
 			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
@@ -107,7 +107,7 @@ return {
 			lazy = false,
 			priority = 1000,
 			opts = {
-				style = "moon",  -- This will use the default night style
+				style = "moon", -- This will use the default night style
 				transparent = false, -- If you want transparency
 				styles = {
 					comments = { italic = true },

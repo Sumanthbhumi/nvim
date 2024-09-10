@@ -6,9 +6,14 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("i", "<c-bs>", "<C-W>", { noremap = true, silent = true })
 
 vim.opt.cursorline = true -- Highlight the current line number in normal mode
-vim.opt.cursorlineopt = "number"
+-- vim.opt.cursorlineopt = "number"
 
--- vim.api.nvim_set_hl(0, "Comment", { fg = "#9a9684" })
+-- vim.api.nvim_set_hl(0, "Comment", { fg = "#636DA6" })
+
+vim.api.nvim_set_hl(0, "Comment", { fg = "#959DD4", bg = "NONE", italic = true })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#636DA6" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#636DA6" })
 
 -- vim.diagnostic.disable() --turn off diagnostic
 -- vim.opt.signcolumn = "auto" --turn off sign column
@@ -48,14 +53,32 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	end,
 })
 -- Set cursor to block in all modes
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
-
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+--
+-- -- Define highlight groups
+-- vim.cmd([[
+--   highlight Cursor guifg=white guibg=#A6E3A2
+--   highlight iCursor guifg=yellow guibg=cyan
+--   highlight vCursor guibg=#A6E3A2 guifg=black
+-- ]])
+--
+-- -- Apply iCursor highlight group to insert mode cursor
+-- -- vim.opt.guicursor:append("i-ci-ve:block-iCursor")
+-- vim.opt.guicursor = {
+-- 	"n-v-c:block-Cursor-blinkwait300-blinkon200-blinkoff150",
+-- 	"i-ci-ve:block-iCursor-blinkwait300-blinkon200-blinkoff150",
+-- 	"r-cr-o:hor20-Cursor-blinkwait300-blinkon200-blinkoff150",
+-- }
 -- Define highlight groups
 vim.cmd([[
-  highlight Cursor guifg=white guibg=green
-  highlight iCursor guifg=yellow guibg=cyan
+  " highlight Cursor guifg=white guibg=#A6E3A2
+  highlight iCursor guifg=yellow guibg=white
   highlight vCursor guibg=#A6E3A2 guifg=black
 ]])
 
--- Apply iCursor highlight group to insert mode cursor
-vim.opt.guicursor:append("i-ci-ve:block-iCursor")
+-- Set cursor configuration for all modes with blinking
+vim.opt.guicursor = {
+	"n-v-c-sm:block-Cursor-blinkwait300-blinkon200-blinkoff150",
+	"i-ci-ve:block-iCursor-blinkwait300-blinkon200-blinkoff150",
+	"r-cr-o:block-Cursor-blinkwait300-blinkon200-blinkoff150",
+}
