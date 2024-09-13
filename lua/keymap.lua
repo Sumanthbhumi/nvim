@@ -78,7 +78,7 @@ local all_modes = { "n", "v", "x", "s", "o", "i", "c" }
 -- Set Z and % mappings
 set_keymap_for_modes(all_modes, "Z", "%")
 vim.api.nvim_set_keymap("i", "<C-J>", "<Esc>", { noremap = true })
-vim.api.nvim_set_keymap("v", "<C-J>", "<Esc>", { noremap = true })
+-- vim.api.nvim_set_keymap("v", "<C-J>", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "H", "^", { noremap = true })
 vim.keymap.set("v", "H", "^", { noremap = true })
@@ -112,5 +112,5 @@ end, opts)
 vim.keymap.set("n", "<leader>ah", ":lua require('harpoon.mark').add_file()<cr>", { desc = "add to harpoon" })
 
 vim.keymap.set("n", "<leader>ai", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "toggle harpoon" })
-vim.keymap.set("n", "<c-m>", ":lua require('harpoon.ui').nav_next()<cr>", { desc = "harpoon next" })
-vim.keymap.set("n", "<c-,>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc = "harpoon before" })
+vim.keymap.set("n", "<a-b>", ":lua require('harpoon.ui').nav_next()<cr>", { desc = "harpoon next" })
+vim.keymap.set("n", "<a-n>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc = "harpoon before" })

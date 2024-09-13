@@ -5,7 +5,8 @@ return {
 		opts = {
 			-- add new user interface icon
 			icons = {
-				VimIcon = "",
+				VimIcon = "",
+				-- VimIcon = "",
 				ScrollText = "",
 				GitBranch = "",
 				GitAdd = "",

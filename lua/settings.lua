@@ -1,12 +1,12 @@
-vim.opt.scrolloff = 5 -- Set scrolloff option
+vim.opt.scrolloff = 5    -- Set scrolloff option
 vim.opt.swapfile = false --Swapfile
 -- set keyboard to unnamedplus
 vim.opt.clipboard = "unnamedplus"
 -- vim.api.nvim_set_hl(0, "Normal", { guibg = "NONE", ctermbg = "NONE" })
 vim.keymap.set("i", "<c-bs>", "<C-W>", { noremap = true, silent = true })
 
-vim.opt.cursorline = true -- Highlight the current line number in normal mode
--- vim.opt.cursorlineopt = "number"
+-- vim.opt.cursorline = true -- Highlight the current line number in normal mode
+vim.opt.cursorlineopt = "number"
 
 -- vim.api.nvim_set_hl(0, "Comment", { fg = "#636DA6" })
 
@@ -70,15 +70,15 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- 	"r-cr-o:hor20-Cursor-blinkwait300-blinkon200-blinkoff150",
 -- }
 -- Define highlight groups
-vim.cmd([[
-  " highlight Cursor guifg=white guibg=#A6E3A2
-  highlight iCursor guifg=yellow guibg=white
-  highlight vCursor guibg=#A6E3A2 guifg=black
-]])
-
--- Set cursor configuration for all modes with blinking
-vim.opt.guicursor = {
-	"n-v-c-sm:block-Cursor-blinkwait300-blinkon200-blinkoff150",
-	"i-ci-ve:block-iCursor-blinkwait300-blinkon200-blinkoff150",
-	"r-cr-o:block-Cursor-blinkwait300-blinkon200-blinkoff150",
-}
+-- vim.cmd([[
+--   " highlight Cursor guifg=white guibg=#A6E3A2
+--   highlight iCursor guifg=yellow guibg=white
+--   highlight vCursor guibg=#A6E3A2 guifg=black
+-- ]])
+--
+-- -- Set cursor configuration for all modes with blinking
+-- vim.opt.guicursor = {
+-- 	"n-v-c-sm:block-Cursor-blinkwait300-blinkon200-blinkoff150",
+-- 	"i-ci-ve:block-iCursor-blinkwait300-blinkon200-blinkoff150",
+-- 	"r-cr-o:block-Cursor-blinkwait300-blinkon200-blinkoff150",
+-- }
