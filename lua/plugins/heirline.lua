@@ -72,6 +72,7 @@ return {
 							return { main = status.hl.mode_bg(), right = "blank_bg" }
 						end,
 					},
+					hl = { fg = "black" },
 				}),
 				-- we want an empty space here so we can use the component builder to make a new section with just an empty string
 				status.component.builder({
