@@ -1,12 +1,12 @@
-vim.opt.scrolloff = 5 -- Set scrolloff option
+vim.opt.scrolloff = 5    -- Set scrolloff option
 vim.opt.swapfile = false --Swapfile
 -- set keyboard to unnamedplus
 vim.opt.clipboard = "unnamedplus"
 -- vim.api.nvim_set_hl(0, "Normal", { guibg = "NONE", ctermbg = "NONE" })
 vim.keymap.set("i", "<c-bs>", "<C-W>", { noremap = true, silent = true })
 
--- vim.opt.cursorline = true -- Highlight the current line number in normal mode
-vim.opt.cursorlineopt = "number"
+vim.opt.cursorline = true -- Highlight the current line number in normal mode
+-- vim.opt.cursorlineopt = "number"
 
 -- vim.api.nvim_set_hl(0, "Comment", { fg = "#636DA6" })
 
@@ -102,3 +102,4 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- 	pattern = { "*" },
 -- 	command = "redrawstatus",
 -- })
+vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><CR>", { noremap = true, silent = true })

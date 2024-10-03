@@ -107,10 +107,14 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>vca", function()
 	vim.lsp.buf.code_action()
-end, opts)
+end)
 
 vim.keymap.set("n", "<leader>ah", ":lua require('harpoon.mark').add_file()<cr>", { desc = "add to harpoon" })
 
 vim.keymap.set("n", "<leader>ai", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "toggle harpoon" })
 vim.keymap.set("n", "<a-b>", ":lua require('harpoon.ui').nav_next()<cr>", { desc = "harpoon next" })
 vim.keymap.set("n", "<a-n>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc = "harpoon before" })
+
+-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
+vim.keymap.set("n", "<C-f>", ":Telescope find_files<CR>", { desc = "Find File" })
+vim.keymap.set("n", "<C-b>", ":Telescope file_browser<CR>", { desc = "File Browser" })

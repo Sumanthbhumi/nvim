@@ -16,11 +16,11 @@ return {
 				-- transparent_background = true,
 				-- 	show_end_of_buffer = false,
 				-- 	term_colors = false,
-				-- 	dim_inactive = {
-				-- 		enabled = false,
-				-- 		shade = "dark",
-				-- 		percentage = 0.15,
-				-- 	},
+				-- dim_inactive = {
+				-- 	enabled = false,
+				-- 	shade = "dark",
+				-- 	percentage = 0.15,
+				-- },
 				-- 	no_italic = false,
 				-- 	no_bold = false,
 				-- 	no_underline = false,
@@ -107,7 +107,7 @@ return {
 			lazy = false,
 			priority = 1000,
 			opts = {
-				style = "moon", -- This will use the default night style
+				style = "moon",  -- This will use the default night style
 				transparent = false, -- If you want transparency
 				styles = {
 					comments = { italic = true },
@@ -125,8 +125,8 @@ return {
 				-- vim.cmd([[colorscheme tokyonight]])
 
 				-- Set the background to be transparent
-				vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-				vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+				-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+				-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 			end,
 		},
 	},

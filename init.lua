@@ -23,3 +23,16 @@ require("lazy_setup")
 require("polish")
 require("keymap")
 require("settings")
+require("neovide")
+-- Check if we're running in a GUI (Neovide)
+if vim.g.neovide then
+	-- Neovide-specific settings
+	-- Ignore certain files
+	vim.opt.wildignore:append("**/image.lua")
+	vim.opt.wildignore:append("**/smoothscroll.lua")
+else
+	-- Regular Neovim settings
+	-- Load all files normally
+end
+
+vim.g.gui_font_default_size = 11

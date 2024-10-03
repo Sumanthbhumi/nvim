@@ -1,3 +1,6 @@
+-- if true then
+-- 	return {}
+-- end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
 	{
 		-- luarocks.nvim is a Neovim plugin designed to streamline the installation
