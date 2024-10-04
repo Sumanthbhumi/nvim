@@ -118,3 +118,7 @@ vim.keymap.set("n", "<a-n>", ":lua require('harpoon.ui').nav_prev()<cr>", { desc
 -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
 vim.keymap.set("n", "<C-f>", ":Telescope find_files<CR>", { desc = "Find File" })
 vim.keymap.set("n", "<C-b>", ":Telescope file_browser<CR>", { desc = "File Browser" })
+
+-- create a new empty lines
+vim.keymap.set("n", "<CR>", '@="m`o<C-V><Esc>``"<CR>')
+vim.keymap.set("n", "<S-CR>", '@="m`O<C-V><Esc>``"<CR>')

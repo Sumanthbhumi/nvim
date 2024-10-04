@@ -1,4 +1,4 @@
-vim.opt.scrolloff = 5    -- Set scrolloff option
+vim.opt.scrolloff = 5 -- Set scrolloff option
 vim.opt.swapfile = false --Swapfile
 -- set keyboard to unnamedplus
 vim.opt.clipboard = "unnamedplus"
@@ -18,8 +18,6 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#636DA6" })
 -- vim.diagnostic.disable() --turn off diagnostic
 -- vim.opt.signcolumn = "auto" --turn off sign column
 vim.opt.conceallevel = 1
-vim.keymap.set("n", "<CR>", '@="m`o<C-V><Esc>``"<CR>')
-vim.keymap.set("n", "<S-CR>", '@="m`O<C-V><Esc>``"<CR>')
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "man",
 	callback = function()

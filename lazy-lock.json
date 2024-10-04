@@ -46,6 +46,7 @@
   "mini.files": { "branch": "main", "commit": "58e1acfadc93f56d4c2c2a8e8d93021f4d7ff411" },
   "mini.indentscope": { "branch": "main", "commit": "d2e7b5f0260789c325f92ab3421ff9884ea01842" },
   "mini.nvim": { "branch": "main", "commit": "14f81b96d850d561b6ed0c1e6715fdd724e4447f" },
+  "minty": { "branch": "main", "commit": "8809b2c7c2edbeb3fa9c3b05bd2e89934d54f526" },
   "neo-tree.nvim": { "branch": "main", "commit": "8c75e8a2949cd6cd35525799200a8d34471ee9eb" },
   "neoconf.nvim": { "branch": "main", "commit": "093a75fa48c65dfe7d413fb2c5b88d3436aeccb1" },
   "neodev.nvim": { "branch": "main", "commit": "1f4ebcc10852518166ce165e57d425a4265a10d4" },
@@ -94,5 +95,6 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-move": { "branch": "master", "commit": "3c4195de0748da9bba25c54d78d959d349e93c55" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
+  "volt": { "branch": "main", "commit": "ce1e55d52d86e33f340a20b45701b434cc684c15" },
   "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" }
 }
