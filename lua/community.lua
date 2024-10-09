@@ -14,4 +14,5 @@ return {
 	{ import = "astrocommunity.colorscheme.tokyonight-nvim" },
 	{ import = "astrocommunity.indent.mini-indentscope" },
 	-- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+	-- { import = "astrocommunity.pack.nvchad-ui" },
 }
