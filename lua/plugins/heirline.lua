@@ -1,6 +1,4 @@
--- if true then
--- 	return {}
--- end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 return {
   {
@@ -73,7 +71,9 @@ return {
             -- it's a left element, so use the left separator
             separator = "left",
             -- set the color of the surrounding based on the current mode using astronvim.utils.status module
-            color = function() return { main = status.hl.mode_bg(), right = "blank_bg" } end,
+            color = function()
+              return { main = status.hl.mode_bg(), right = "blank_bg" }
+            end,
           },
           hl = { fg = "black" },
         },

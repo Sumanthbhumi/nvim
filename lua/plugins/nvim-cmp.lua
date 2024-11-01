@@ -29,10 +29,22 @@ export default {}
   ]],
             {
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
             }
           )
         ),
@@ -53,10 +65,22 @@ export default {}
   ]],
             {
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
             }
           )
         ),
@@ -77,10 +101,22 @@ export default {}
   ]],
             {
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
               f(function(_, snip) return snip.env.TM_FILENAME_BASE:lower() end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
             }
           )
         ),
@@ -98,9 +134,21 @@ const {} = () => {{
 export default {}
   ]],
             {
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
             }
           )
         ),
@@ -118,9 +166,21 @@ const {} = () => {{
 export default {}
   ]],
             {
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
-              f(function(_, snip) return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper) end),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
+              f(
+                function(_, snip)
+                  return snip.env.TM_FILENAME_BASE:gsub("^%l", string.upper)
+                end
+              ),
             }
           )
         ),
@@ -185,27 +245,72 @@ export default {}
         TypeParameter = "",
       }
 
+      -- opts.formatting = {
+      --   format = function(entry, vim_item)
+      --     -- Get the completion item details
+      --     local item = entry:get_completion_item()
+      --
+      --     -- Save the original abbr
+      --     local word = vim_item.abbr
+      --     -- Extract just the namespace
+      --     if item.detail then
+      --       local namespace = item.detail:match "([%w%.]+)%.%w+$"
+      --       if namespace then
+      --         -- Truncate the namespace if it's too long
+      --         if #namespace > 20 then
+      --           namespace = namespace:sub(1, 17) .. "..."
+      --         end
+      --         -- Add namespace with highlighting
+      --         vim_item.abbr = word
+      --         vim_item.menu = namespace
+      --       end
+      --     end
+      --
+      --     -- Add the kind at the end
+      --     vim_item.kind =
+      --       string.format("%s %s", cmp_kinds[vim_item.kind], vim_item.kind)
+      --     return vim_item
+      --   end,
+      --   fields = { "abbr", "menu", "kind" }, -- Specify the order of fields
+      -- }
+
       opts.formatting = {
         format = function(entry, vim_item)
           -- Get the completion item details
           local item = entry:get_completion_item()
+          -- Get color formatting
+          local color_item = require("nvim-highlight-colors").format(
+            entry,
+            { kind = vim_item.kind }
+          )
 
           -- Save the original abbr
           local word = vim_item.abbr
+
           -- Extract just the namespace
           if item.detail then
             local namespace = item.detail:match "([%w%.]+)%.%w+$"
             if namespace then
               -- Truncate the namespace if it's too long
-              if #namespace > 20 then namespace = namespace:sub(1, 17) .. "..." end
+              if #namespace > 20 then
+                namespace = namespace:sub(1, 17) .. "..."
+              end
               -- Add namespace with highlighting
               vim_item.abbr = word
               vim_item.menu = namespace
             end
           end
 
-          -- Add the kind at the end
-          vim_item.kind = string.format("%s %s", cmp_kinds[vim_item.kind], vim_item.kind)
+          -- Add the kind at the end with icon
+          vim_item.kind =
+            string.format("%s %s", cmp_kinds[vim_item.kind], vim_item.kind)
+
+          -- Apply color highlighting if available
+          if color_item.abbr_hl_group then
+            vim_item.kind_hl_group = color_item.abbr_hl_group
+            vim_item.kind = color_item.abbr
+          end
+
           return vim_item
         end,
         fields = { "abbr", "menu", "kind" }, -- Specify the order of fields
@@ -248,7 +353,8 @@ export default {}
       }
 
       -- auto trigger completion
-      local autocomplete_group = vim.api.nvim_create_augroup("AutoComplete", { clear = true })
+      local autocomplete_group =
+        vim.api.nvim_create_augroup("AutoComplete", { clear = true })
       vim.api.nvim_create_autocmd("InsertEnter", {
         group = autocomplete_group,
         callback = function() cmp.complete() end,

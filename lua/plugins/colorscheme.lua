@@ -1,6 +1,4 @@
--- if true then
--- 	return {}
--- end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   {
     "catppuccin/nvim",
@@ -92,13 +90,17 @@ return {
         -- 		},
         -- 	},
       }
-      vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#959DD4", bg = "NONE", bold = true })
+      vim.api.nvim_set_hl(
+        0,
+        "CursorLineNr",
+        { fg = "#959DD4", bg = "NONE", bold = true }
+      )
       vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC" })
       vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F" })
       -- Set the background to be transparent
       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-      vim.cmd.colorscheme "catppuccin"
+      -- vim.cmd.colorscheme "catppuccin"
     end,
   },
   {

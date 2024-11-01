@@ -149,7 +149,12 @@ map(
   ':let @+ = expand("%:p")<CR>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<CR>',
   { desc = "copy path and file name to clipboard", silent = false }
 )
-map("n", "<leader>va", function() vim.lsp.buf.code_action() end)
+map(
+  "n",
+  "<leader>va",
+  function() vim.lsp.buf.code_action() end,
+  { desc = "code action" }
+)
 
 map(
   "n",
